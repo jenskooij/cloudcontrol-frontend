@@ -1,0 +1,29 @@
+{
+  "name": "cloudcontrol-cms-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for the Cloud Control CMS",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --watch scss --watch js --watch build -e js,scss index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jenskooij/cloudcontrol-frontend.git"
+  },
+  "keywords": [
+    "cloud",
+    "control",
+    "cms",
+    "frontend"
+  ],
+  "author": "Jens Kooij <jenskooij1988@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jenskooij/cloudcontrol-frontend/issues"
+  },
+  "homepage": "https://github.com/jenskooij/cloudcontrol-frontend#readme",
+  "dependencies": {
+    "nodemon": "^1.11.0",
+    "cloud-control-frontend": "^1.0.3"
+  }
+}
