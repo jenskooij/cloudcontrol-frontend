@@ -4,6 +4,7 @@
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -11,17 +12,17 @@ html {
 //
 // Clear fix. Happy grids for all.
 //
-%clearfix:before, %clearfix:after { 
-	content: " "; 
-	display: table; 
+%clearfix:before, %clearfix:after {
+  content: " ";
+  display: table;
 }
 
-%clearfix:after { 
-	clear: both; 
+%clearfix:after {
+  clear: both;
 }
 
 %clearfix { // IE we love you
-	*zoom: 1; 
+  *zoom: 1;
 }
 
 //
@@ -29,24 +30,24 @@ html {
 //
 
 %inlineblock {
-	display:inline-block;
-	*display:inline;
-	zoom:1;
-	vertical-align:top;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  vertical-align: top;
 }
 
 %flex-parent {
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 
-	-webkit-flex-wrap: wrap;
-	-ms-flex-wrap: wrap;
-	flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 %flex-child {
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }

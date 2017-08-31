@@ -13,7 +13,7 @@
   }
 
   ul.files {
-    &> li {
+    & > li {
       @extend %panel;
       padding: 0;
 
@@ -62,19 +62,19 @@
       }
 
       .small {
-        font-size:0.7em;
+        font-size: 0.7em;
 
         &.state {
-          color:lighten($error-color, 20%);
+          color: lighten($error-color, 20%);
 
           &.state.published {
-            color:$validate-color;
+            color: $validate-color;
           }
         }
       }
 
       .label {
-        color:$text-color-light;
+        color: $text-color-light;
       }
     }
   }
