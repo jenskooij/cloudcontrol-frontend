@@ -16,6 +16,29 @@
     }
   }
 
+  .infoMessage {
+    padding:1em;
+    margin:1em;
+    border:1px solid $btn-default-color;
+    background-color:#fff;
+
+    &.error {
+      border-color: $error-color;
+    }
+
+    .fa-times-circle-o {
+      color: lighten($error-color, 20%);
+    }
+
+    .fa-check-circle-o {
+      color: $validate-color;
+    }
+
+    .fa-trash {
+      color:$error-color;
+    }
+  }
+
   .brick {
     padding: 1em;
     background-color: transparentize($btn-default-color, 0.9);
