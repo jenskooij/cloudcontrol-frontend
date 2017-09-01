@@ -28,7 +28,7 @@
 
   .activityLog {
     @include breakpoint(desktop) {
-      max-height: 39em;
+      max-height: 37em;
       overflow: auto;
     }
 
