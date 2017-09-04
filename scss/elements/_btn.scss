@@ -30,6 +30,16 @@
     }
   }
 
+  &.valuelists {
+    background-color: $valuelists-color;
+
+    &:hover,
+    &.active {
+      color: $valuelists-color;
+      background-color: $btn-text-color;
+    }
+  }
+
   &.sitemap {
     background-color: $sitemap-color;
 
