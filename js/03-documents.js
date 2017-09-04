@@ -251,8 +251,14 @@ function imageSelect (e, imageSelectorId) {
     httpGetAsync(cmsSubfolders + '/images.json?' + Date.now(), function (result) {
       var images = JSON.parse(result),
         i,
-        imageNode;
+        imageNode,
+      fileNode = document.createElement('input');
+      fileNode.setAttribute('type', 'file');
       selector.innerHTML = '';
+      selector.appendChild(fileNode);
+
+      createImageUploadable(selector, imageSelectorId);
+
       for (i = 0; i < images.length; i += 1) {
         imageNode = new Image();
         imageNode.src = subfolders + 'images/' + images[i].set[smallestImage];
@@ -305,7 +311,7 @@ function selectImage (e) {
 }
 
 function createUploadable (element, fileSelectorId) {
-  var uploadInput = element.getElementsByTagName('input')[1],
+  var uploadInput = element.getElementsByTagName('input')[0],
     form = uploadInput.parentNode;
 
   uploadInput.onclick = function (e) {
@@ -348,6 +354,48 @@ function createUploadable (element, fileSelectorId) {
           element.appendChild(fileNode);
           uploadInput.style.display = 'block';
           fileNode.click();
+        }
+      };
+      xhr.send(formData);
+      uploadInput.style.display = 'none';
+    }
+  }, false);
+}
+
+function createImageUploadable (element, imageSelectorId) {
+  var uploadInput = element.getElementsByTagName('input')[0];
+
+  console.log(uploadInput);
+
+  uploadInput.onclick = function (e) {
+    this.value = null;
+  };
+
+  uploadInput.addEventListener('change', function (e) {
+    var file,
+      formData,
+      xhr,
+      imageNode;
+    if (this.files !== null && this.files[0] !== null) {
+      file = this.files[0];
+      formData = new FormData();
+      formData.append("file", file, file.name);
+      xhr = new XMLHttpRequest();
+      xhr.open("POST", cmsSubfolders + '/images/new-ajax', true);
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          var image = JSON.parse(xhr.responseText);
+          imageNode = new Image();
+          imageNode.src = subfolders + 'images/' + image.set[smallestImage];
+          imageNode.className = 'image-selector';
+          imageNode.setAttribute("data-value", image.file);
+          imageNode.setAttribute("data-target-id", imageSelectorId);
+          imageNode.onclick = selectImage;
+          imageNode.title = image.file;
+          element.appendChild(imageNode);
+          uploadInput.style.display = 'block';
+          imageNode.click();
         }
       };
       xhr.send(formData);
