@@ -18,15 +18,16 @@ $input-accent-color: rgb(29, 29, 29);
 
 $main-nav-color: rgb(29, 29, 29);
 
-$documents-color: rgb(0, 130, 135);
-$valuelists-color: rgb(99, 47, 0);
-$sitemap-color: rgb(176, 30, 0);
-$images-color: rgb(119, 185, 0);
-$files-color: rgb(255, 183, 0);
-$configuration-color: rgb(170, 64, 255);
-$search-color: rgb(241, 110, 20);
-
 $btn-text-color: rgb(255, 255, 255);
 $btn-text-color-dark: rgb(153, 153, 153);
 $btn-default-color: rgb(0, 106, 193);
 $btn-move-color: rgb(240, 240, 240);
+
+$documents-color: rgb(0, 130, 135);
+$valuelists-color: rgb(99, 47, 0);
+$sitemap-color: rgb(176, 30, 0);
+$redirects-color: rgb(241, 110, 20);
+$images-color: rgb(119, 185, 0);
+$files-color: rgb(255, 183, 0);
+$configuration-color: rgb(170, 64, 255);
+$search-color: $btn-default-color;

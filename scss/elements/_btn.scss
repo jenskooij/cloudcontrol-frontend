@@ -50,6 +50,16 @@
     }
   }
 
+  &.redirects {
+    background-color: $redirects-color;
+
+    &:hover,
+    &.active {
+      color: $redirects-color;
+      background-color: $btn-text-color;
+    }
+  }
+
   &.images {
     background-color: $images-color;
 

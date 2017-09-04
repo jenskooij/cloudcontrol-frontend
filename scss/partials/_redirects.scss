@@ -1,0 +1,71 @@
+.redirects {
+  h2 {
+    color: $redirects-color;
+
+    a {
+      color: $redirects-color;
+
+      &:hover {
+        color: lighten($redirects-color, 10%);
+        text-decoration: none;
+      }
+    }
+  }
+
+  ul.redirects {
+    & > li {
+      @extend %panel;
+
+      h3 {
+        @extend %inlineblock;
+        vertical-align: baseline;
+        margin: 0;
+      }
+
+      .btn {
+        padding: 1em;
+        vertical-align: baseline;
+
+        &.documentTitle {
+          background-color: $panel-bg-color;
+          color: $text-color;
+
+          &:hover,
+          &.active {
+            color: $btn-default-color;
+            background-color: $btn-text-color;
+          }
+
+          &.active {
+            i:before {
+              content: "\f115";
+            }
+          }
+        }
+      }
+
+      .grid-box-8 {
+        @extend %inlineblock;
+        width: 66.666666666%;
+      }
+
+      .grid-box-4 {
+        @extend %inlineblock;
+        width: 33.333333333%;
+      }
+
+      .empty {
+        padding: 0.5em;
+      }
+
+      .documentActions {
+        text-align: right;
+        float:right;
+      }
+
+      .label {
+        color: $text-color-light;
+      }
+    }
+  }
+}
