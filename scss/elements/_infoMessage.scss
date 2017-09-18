@@ -1,0 +1,57 @@
+.infoMessage {
+  position:fixed;
+  bottom:2em;
+  width:100%;
+  text-align: center;
+  left:0;
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  -ms-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  color:#fff;
+
+  .content {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: left;
+    background-color:rgba(0,0,0,0.8);
+    width: 100%;
+    max-width:640px;
+    margin: 1em auto;
+    padding:2em;
+    line-height:1.5em;
+
+    &:hover {
+      background-color:rgba(0,0,0,0.9);
+    }
+
+    a {
+      color:$btn-default-color;
+    }
+
+    .fa {
+      font-size:1.5em;
+      line-height:1em;
+    }
+  }
+
+
+
+  &.error {
+    color: $error-color;
+  }
+
+  .fa-times-circle-o {
+    color: lighten($error-color, 20%);
+  }
+
+  .fa-check-circle-o {
+    color: $validate-color;
+  }
+
+  .fa-trash {
+    color:$error-color;
+  }
+}
