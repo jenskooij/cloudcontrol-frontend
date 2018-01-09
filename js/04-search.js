@@ -1,4 +1,4 @@
-(function () {
+afterDomLoads(function () {
     var searchIndexProgressBar = document.getElementById('search_index_progress_bar'),
         searchIndexProgressBarProgress,
         searchIndexStatus = document.getElementById('search_index_status'),
@@ -128,4 +128,4 @@
             window.onbeforeunload = null;
         }
     }
-})();
+});

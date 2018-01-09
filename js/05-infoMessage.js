@@ -1,4 +1,4 @@
-(function () {
+afterDomLoads(function () {
   "use strict";
   var infoMessage = document.querySelector('.infoMessage'),
     infoMessageTimeout,
@@ -24,4 +24,4 @@
   function removeInfoMessageTimeout () {
     clearTimeout(infoMessageTimeout);
   }
-})();
+});

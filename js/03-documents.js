@@ -1,4 +1,4 @@
-(function () {
+afterDomLoads(function () {
   "use strict";
   var folders = document.getElementsByClassName("openFolder"),
     i;
@@ -6,7 +6,7 @@
   for (i = 0; i < folders.length; i += 1) {
     folders[i].onclick = openFolder;
   }
-})();
+});
 
 function openFolder (e) {
   "use strict";
