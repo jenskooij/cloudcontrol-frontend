@@ -24,6 +24,6 @@
   "homepage": "https://github.com/jenskooij/cloudcontrol-frontend#readme",
   "dependencies": {
     "nodemon": "^1.11.0",
-    "cloud-control-frontend": "^1.0.8"
+    "cloud-control-frontend": "^1.0.9"
   }
 }

@@ -119,6 +119,12 @@
   font-style: normal;
 }
 
+.note-icon-video:before {
+  content: "\f16a";
+  font-family: 'FontAwesome';
+  font-style: normal;
+}
+
 .rte {
   .note-editor {
     position: relative;
