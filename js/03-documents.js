@@ -252,7 +252,7 @@ function imageSelect (e, imageSelectorId) {
       var images = JSON.parse(result),
         i,
         imageNode,
-      fileNode = document.createElement('input');
+        fileNode = document.createElement('input');
       fileNode.setAttribute('type', 'file');
       selector.innerHTML = '';
       selector.appendChild(fileNode);
@@ -325,7 +325,7 @@ function createUploadable (element, fileSelectorId) {
       fileNode,
       filenameNode,
       iconNode,
-    fileJson;
+      fileJson;
     if (this.files !== null && this.files[0] !== null) {
       file = this.files[0];
       formData = new FormData();

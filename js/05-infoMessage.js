@@ -10,7 +10,7 @@ afterDomLoads(function () {
     addInfoMessageTimeout();
   }
 
-  function addInfoMessageTimeout() {
+  function addInfoMessageTimeout () {
     infoMessageTimeout = setTimeout(function () {
       infoMessage.style.opacity = 0;
       afterFadeTimeout = setTimeout(function () {
