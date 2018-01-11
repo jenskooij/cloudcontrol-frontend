@@ -20,7 +20,7 @@ afterDomLoads(function () {
     e = e ? e : window.event;
     var target = e.target ? e.target : e.srcElement;
 
-    if (target.contentWindow.location.href.indexOf('edit-document') === -1 && target.contentWindow.location.href !== 'about:blank') {
+    if (target.contentWindow.location.href.indexOf('edit-document') === -1 && target.contentWindow.location.href.indexOf('publish-document') === -1 && target.contentWindow.location.href.indexOf('update-index') === -1 && target.contentWindow.location.href !== 'about:blank') {
       iframe.allowTransparency = false;
       iframe.setAttribute('src', 'about:blank');
       iframe.style.backgroundColor = '#fff';
