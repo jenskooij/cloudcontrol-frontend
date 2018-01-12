@@ -20,7 +20,7 @@ afterDomLoads(function () {
     e = e ? e : window.event;
     var target = e.target ? e.target : e.srcElement;
 
-    if (target.contentWindow.location.href.indexOf('edit-document') === -1 && target.contentWindow.location.href.indexOf('publish-document') === -1 && target.contentWindow.location.href.indexOf('update-index') === -1 && target.contentWindow.location.href !== 'about:blank') {
+    if (target.contentWindow.location.href.indexOf('edit-document') === -1 && target.contentWindow.location.href.indexOf('publish-document') === -1 && target.contentWindow.location.href.indexOf('new-document') === -1 && target.contentWindow.location.href.indexOf('update-index') === -1 && target.contentWindow.location.href !== 'about:blank') {
       iframe.allowTransparency = false;
       iframe.setAttribute('src', 'about:blank');
       iframe.style.backgroundColor = '#fff';
@@ -28,7 +28,7 @@ afterDomLoads(function () {
       setTimeout(function () {
         window.location.reload(true);
       }, 1000);
-    } else if (target.contentWindow.location.href.indexOf('edit-document') !== -1) {
+    } else if (target.contentWindow.location.href.indexOf('edit-document') !== -1 || target.contentWindow.location.href.indexOf('new-document') !== -1) {
       var innerDoc = target.contentDocument || target.contentWindow.document;
       if (innerDoc !== null) {
         innerDoc.querySelector('.mainNav-toggle').style.display = 'none';
@@ -54,6 +54,7 @@ afterDomLoads(function () {
     modal.style.zIndex = 256;
 
     iframe = document.createElement('iframe');
+    iframe.style.display = 'inline-block';
     iframe.style.height = '100%';
     iframe.style.width = '50%';
     if (getWindowWidth() < 1290) {
@@ -89,7 +90,7 @@ afterDomLoads(function () {
   if (editButtons !== null) {
     for (i = 0; i < editButtons.length; i += 1) {
       editButtons[i].addEventListener('click', toggleCCDocumentEditor);
-      editButtons[i].className = 'ccEditDocumentButton active';
+      editButtons[i].className = editButtons[i].className + ' active';
     }
   }
 });
