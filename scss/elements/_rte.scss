@@ -749,7 +749,11 @@
 
     code,
     pre {
-      font-family: Courier New, monospace;
+      font-family: 'Courier New', monospace;
+      border:1px solid #000;
+      background-color:#fff;
+      padding:0.5em;
+      margin:1em;
     }
 
     blockquote {
