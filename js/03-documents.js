@@ -1,87 +1,38 @@
 afterDomLoads(function () {
   "use strict";
-  var folders = document.getElementsByClassName("openFolder"),
+  var allContextMenus = document.querySelectorAll('.context-menu'),
     i;
 
-  for (i = 0; i < folders.length; i += 1) {
-    folders[i].onclick = openFolder;
+  function toggleContextMenu (contextMenu) {
+    contextMenu.className = 'context-menu active';
+  }
+
+  function contextMenuClickListener (e) {
+    e = e ? e : window.event;
+    var target = e.target ? e.target : e.srcElement,
+      parent = target.parentNode;
+
+    for (i = 0; i < allContextMenus.length; i += 1) {
+      allContextMenus[i].className = 'context-menu';
+    }
+
+    if (target.className === 'context-menu' || target.className === 'context-menu active') {
+      toggleContextMenu(target);
+      return false;
+    }
+
+    if (parent.className === 'context-menu' || parent.className === 'context-menu active') {
+      toggleContextMenu(parent);
+      return false;
+    }
+
+    return true;
+  }
+
+  if (allContextMenus !== false) {
+    document.addEventListener('click', contextMenuClickListener, false);
   }
 });
-
-function openFolder (e) {
-  "use strict";
-  e = e ? e : window.event;
-  var target = e.target ? e.target : e.srcElement,
-    path,
-    pathHolder = document.getElementById('pathHolder'),
-    allNested,
-    allBtn,
-    i,
-    targetBtn;
-  if (typeof e.preventDefault === 'function') {
-    e.preventDefault();
-  }
-
-  if (target.nodeName === "I") {
-    target = target.parentNode;
-  }
-
-  if (target.className.indexOf("active") !== -1) {
-    target.className = target.className.replace(" active", '');
-  } else {
-    target.className = target.className + " active";
-  }
-
-  path = '/' + target.getAttribute("data-slug");
-
-  targetBtn = target;
-
-  if (target.parentNode.nodeName === "H3") {
-    target = target.parentNode;
-  }
-
-  target = target.parentNode.parentNode.getElementsByTagName('ul')[0];
-
-  if (target.className.indexOf('root') !== -1) {
-    allNested = document.getElementsByClassName('nested');
-    allBtn = document.getElementsByClassName('btn');
-    for (i = 0; i < allNested.length; i += 1) {
-      if (allNested[i] !== target) {
-        allNested[i].className = allNested[i].className.replace(' active', '');
-      }
-    }
-    for (i = 0; i < allBtn.length; i += 1) {
-      if (allBtn[i] !== targetBtn) {
-        allBtn[i].className = allBtn[i].className.replace(' active', '');
-      }
-    }
-  }
-
-  if (target.className.indexOf("active") !== -1) {
-    allNested = target.getElementsByClassName('nested');
-    allBtn = target.getElementsByClassName('btn');
-    for (i = 0; i < allNested.length; i += 1) {
-      allNested[i].className = allNested[i].className.replace(' active', '');
-    }
-    for (i = 0; i < allBtn.length; i += 1) {
-      allBtn[i].className = allBtn[i].className.replace(' active', '');
-    }
-    target.className = target.className.replace(" active", '');
-    path = path.split('/');
-    path.pop();
-    path = path.join('/').replace(',', '/');
-    path = path === '' ? '/' : path;
-  } else {
-    target.className = target.className + " active";
-  }
-
-  History.init();
-
-  History.replaceState(null, 'Cloud Control CMS', '?path=' + path);
-  if (pathHolder !== null) {
-    pathHolder.innerText = path;
-  }
-}
 
 function getParameterByName (name, url) {
   if (!url) {
