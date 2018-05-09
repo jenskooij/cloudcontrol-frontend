@@ -22,61 +22,80 @@
   }
 
   table.documents {
-    width:100%;
+    width: 100%;
 
     .unpublished-changes {
-      background-color:$files-color;
-      font-size:0.8em;
-      border-radius:3px;
-      padding:0 0.5em;
+      background-color: $files-color;
+      font-size: 0.8em;
+      border-radius: 3px;
+      padding: 0 0.5em;
     }
 
     tr:first-child {
       td {
-        border-top:1px solid $documents-color;
+        border-top: 5px solid $bg-color;
       }
     }
 
     td.icon {
       text-align: center;
       width: 3em;
+
+      &.context-menu-container {
+        width: 4em;
+        padding-right: 1em;
+      }
     }
 
     td {
-      line-height:4em;
-      border-bottom:1px solid $documents-color;
+      line-height: 4em;
+      border-bottom: 3px solid $bg-color;
+      background-color: #ffffff;
 
       > a {
-        color:$btn-default-color;
-        text-decoration:none;
+        color: $btn-default-color;
+        text-decoration: none;
 
         &:hover {
-          text-decoration:underline;
+          text-decoration: underline;
         }
       }
     }
 
     tr:hover {
       td {
-        background-color:rgba($documents-color, 0.1);
+        background-color: rgba($documents-color, 0.1);
       }
 
       .context-menu {
-        border:1px solid $documents-color;
+        border: 1px solid $documents-color;
       }
     }
 
     .context-menu {
-      line-height:3em;
-      box-sizing:border-box;
-      border-radius:5px;
+      line-height: 3em;
+      box-sizing: border-box;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $documents-color;
+        color: #ffffff;
+        > i {
+          color: #ffffff;
+        }
+      }
 
       a {
-        width:10em;
-        display:inline-block;
-        text-align:left;
-        padding:0 0.5em;
-        text-decoration:none;
+        width: 10em;
+        display: inline-block;
+        text-align: left;
+        padding: 0 0.5em;
+        text-decoration: none;
+
+        .fa-pencil {
+          color:$btn-default-color;
+        }
 
         .fa-trash {
           color: $sitemap-color;
@@ -91,17 +110,17 @@
         }
 
         &:hover {
-          background-color:$documents-color;
-          color:#fff;
+          background-color: $documents-color;
+          color: #ffffff;
           i {
-            color:#fff;
+            color: #ffffff;
           }
         }
       }
 
       &:hover {
         ul {
-          display:block;
+          display: block;
         }
       }
 
@@ -111,39 +130,54 @@
         position: absolute;
         text-align: right;
         margin-left: -7em;
-        background-color: #fff;
-        box-shadow: 5px 5px 15px #999;
+        background-color: #ffffff;
+        box-shadow: 5px 5px 15px #999999;
 
         li {
-          border-bottom:1px solid $bg-color;
+          border-bottom: 1px solid $bg-color;
 
           &:last-child {
-            border-bottom:none;
+            border-bottom: none;
           }
 
           &:hover {
-            border-color:$documents-color;
+            border-color: $documents-color;
           }
         }
       }
     }
 
     .fa {
-      font-size:1.5em;
-      vertical-align:sub;
+      font-size: 1.5em;
+      vertical-align: sub;
 
       &.fa-check-circle-o {
-        color:$images-color;
+        color: $images-color;
       }
 
       &.fa-times-circle-o {
-        color:$sitemap-color;
+        color: $sitemap-color;
       }
     }
   }
 
   form {
     @extend %panel;
+
+    div.title.readonly {
+      label {
+        display:none;
+      }
+
+      input[readonly="readonly"] {
+        background-color:#fff;
+        font-size:1.5em;
+        font-family: $font-family-headers;
+        border:none;
+        padding:0;
+      }
+    }
+
 
     .form-element {
       display: table;
@@ -267,6 +301,5 @@
       text-align: right;
     }
   }
-
 
 }
