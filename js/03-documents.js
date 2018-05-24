@@ -34,6 +34,24 @@ afterDomLoads(function () {
   }
 });
 
+function showDocumentDetails (target) {
+  var tableRow = target.parentNode.parentNode.parentNode.parentNode.parentNode,
+    detailsDiv = tableRow.querySelector('.details'),
+    openedDetailsDiv = document.querySelector('.details.active');
+
+  if (openedDetailsDiv !== null && openedDetailsDiv !== detailsDiv) {
+    openedDetailsDiv.className = openedDetailsDiv.className.replace('active', '').trim();
+  }
+
+  if (detailsDiv.className.indexOf('active') === -1) {
+    detailsDiv.className = detailsDiv.className + ' active';
+  } else {
+    detailsDiv.className = detailsDiv.className.replace('active', '').trim();
+  }
+
+  return false;
+}
+
 function getParameterByName (name, url) {
   if (!url) {
     url = window.location.href;

@@ -24,7 +24,8 @@
   table.documents {
     width: 100%;
 
-    th {
+    > tr > th,
+    > tbody > tr > th {
       line-height: 4em;
       text-align: left;
       padding: 0 0.5em;
@@ -39,20 +40,29 @@
       }
     }
 
-    .unpublished-changes {
-      background-color: $files-color;
+    .small {
       font-size: 0.8em;
-      border-radius: 3px;
-      padding: 0 0.5em;
+
+      &.unpublished-changes {
+        background-color: $files-color;
+        border-radius: 3px;
+        padding: 0 0.5em;
+      }
+
+      &.document-type {
+        color:#999;
+      }
     }
 
-    tr:first-child {
-      td {
+    > tr:first-child,
+    > tbody > tr:first-child {
+      > td {
         border-top: 5px solid $bg-color;
       }
     }
 
-    td.icon {
+    > tr > td.icon,
+    > tbody > tr > td.icon {
       text-align: center;
       width: 3em;
 
@@ -62,7 +72,8 @@
       }
     }
 
-    td {
+    > tr > td,
+    > tbody > tr > td {
       line-height: 4em;
       border-bottom: 3px solid $bg-color;
       background-color: #ffffff;
@@ -77,8 +88,9 @@
       }
     }
 
-    tr:hover {
-      td {
+    > tr:hover,
+    > tbody > tr:hover {
+      > td {
         background-color: rgba($documents-color, 0.1);
       }
 
@@ -107,6 +119,7 @@
         text-align: left;
         padding: 0 0.5em;
         text-decoration: none;
+        color:$btn-default-color;
 
         .fa-pencil {
           color:$btn-default-color;
@@ -172,6 +185,25 @@
 
       &.fa-times-circle-o {
         color: $sitemap-color;
+      }
+    }
+
+    .details {
+      max-height:0;
+      transition:0.5s max-height;
+      overflow:hidden;
+
+      &.active {
+        max-height:500px;
+        transition:1s max-height;
+      }
+
+      td, th {
+        font-size:0.8em;
+        padding: 0 1em;
+      }
+      th {
+        font-weight:700;
       }
     }
   }
