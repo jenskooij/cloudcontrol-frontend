@@ -3,6 +3,32 @@
 @import "../includes/helpers";
 
 .documents {
+  .schedule-publication {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+
+    &.active {
+      display: table;
+    }
+
+    form {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+
+      input[type="text"],
+      input[type="date"],
+      input[type="time"] {
+        max-width: 15em;
+        margin:1em auto;
+      }
+    }
+  }
+
   h2 {
     color: $documents-color;
 
@@ -31,11 +57,11 @@
       padding: 0 0.5em;
 
       a {
-        text-decoration:none;
-        color:$text-color;
+        text-decoration: none;
+        color: $text-color;
 
         &:hover {
-          color:$btn-default-color;
+          color: $btn-default-color;
         }
       }
     }
@@ -49,8 +75,22 @@
         padding: 0 0.5em;
       }
 
+      &.scheduled-for-publication {
+        background-color: $images-color;
+        border-radius: 3px;
+        padding: 0 0.5em;
+        color: #ffffff;
+
+        .fa {
+          font-size: 1em;
+          vertical-align: baseline;
+          margin-right: 0.5em;
+          color: #ffffff;
+        }
+      }
+
       &.document-type {
-        color:#999;
+        color: #999999;
       }
     }
 
@@ -114,15 +154,19 @@
       }
 
       a {
-        width: 10em;
+        width: 15em;
         display: inline-block;
         text-align: left;
         padding: 0 0.5em;
         text-decoration: none;
-        color:$btn-default-color;
+        color: $btn-default-color;
 
         .fa-pencil {
-          color:$btn-default-color;
+          color: $btn-default-color;
+        }
+
+        .fa-clock-o {
+          color: $text-color;
         }
 
         .fa-trash {
@@ -157,7 +201,7 @@
         display: none;
         position: absolute;
         text-align: right;
-        margin-left: -7em;
+        margin-left: -12em;
         background-color: #ffffff;
         box-shadow: 5px 5px 15px #999999;
 
@@ -189,21 +233,21 @@
     }
 
     .details {
-      max-height:0;
-      transition:0.5s max-height;
-      overflow:hidden;
+      max-height: 0;
+      transition: 0.5s max-height;
+      overflow: hidden;
 
       &.active {
-        max-height:500px;
-        transition:1s max-height;
+        max-height: 500px;
+        transition: 1s max-height;
       }
 
       td, th {
-        font-size:0.8em;
+        font-size: 0.8em;
         padding: 0 1em;
       }
       th {
-        font-weight:700;
+        font-weight: 700;
       }
     }
   }
@@ -213,18 +257,17 @@
 
     div.title.readonly {
       label {
-        display:none;
+        display: none;
       }
 
       input[readonly="readonly"] {
-        background-color:#fff;
-        font-size:1.5em;
+        background-color: #ffffff;
+        font-size: 1.5em;
         font-family: $font-family-headers;
-        border:none;
-        padding:0;
+        border: none;
+        padding: 0;
       }
     }
-
 
     .form-element {
       display: table;
@@ -234,7 +277,7 @@
         display: block;
 
         @include breakpoint(desktop) {
-          display:table-cell;
+          display: table-cell;
         }
 
         width: 10em;
@@ -264,7 +307,7 @@
           display: block;
 
           @include breakpoint(desktop) {
-            display:table-cell;
+            display: table-cell;
           }
           width: 10em;
         }
