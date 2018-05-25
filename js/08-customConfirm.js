@@ -7,8 +7,6 @@ afterDomLoads(function () {
     e.preventDefault();
     e.stopPropagation();
 
-    console.log('confirming: ' + target.getAttribute('href'));
-
     confirmationText = target.getAttribute('data-confirm');
     confirmText = target.hasAttribute('data-confirm-text') ? target.getAttribute('data-confirm-text') : 'Confirm';
     declineText = target.hasAttribute('data-decline-text') ? target.getAttribute('data-decline-text') : 'Decline';
