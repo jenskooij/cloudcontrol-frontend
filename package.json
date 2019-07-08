@@ -4,7 +4,9 @@
   "description": "Frontend for the Cloud Control CMS",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --watch scss --watch js --watch build -e js,scss index.js"
+    "start": "nodemon --watch scss --watch js --watch build -e js,scss index.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -24,6 +26,8 @@
   "homepage": "https://github.com/jenskooij/cloudcontrol-frontend#readme",
   "dependencies": {
     "nodemon": "^1.11.0",
-    "cloud-control-frontend": "^1.0.8"
-  }
+    "cloud-control-frontend": "^1.0.8",
+    "snyk": "^1.192.3"
+  },
+  "snyk": true
 }
