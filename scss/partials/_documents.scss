@@ -24,7 +24,7 @@
       input[type="date"],
       input[type="time"] {
         max-width: 15em;
-        margin:1em auto;
+        margin: 1em auto;
       }
     }
   }
@@ -148,6 +148,7 @@
       &:hover {
         background-color: $documents-color;
         color: #ffffff;
+
         > i {
           color: #ffffff;
         }
@@ -184,6 +185,7 @@
         &:hover {
           background-color: $documents-color;
           color: #ffffff;
+
           i {
             color: #ffffff;
           }
@@ -246,6 +248,7 @@
         font-size: 0.8em;
         padding: 0 1em;
       }
+
       th {
         font-weight: 700;
       }
@@ -349,6 +352,7 @@
         padding: 0.5em;
         max-height: 23em;
         overflow: auto;
+
         li {
           padding: 1em;
           margin: 0.5em;
@@ -398,6 +402,38 @@
 
     .handles {
       text-align: right;
+    }
+  }
+
+  .CodeMirror {
+    background-color: $input-bg-color;
+
+    .editor-preview {
+      h1 {
+        margin: 0em 0em 0.5em;
+      }
+
+      ul {
+        padding:0 3em;
+        list-style-type:disc;
+      }
+
+      ol {
+        padding:0 3em;
+        list-style-type: decimal;
+      }
+
+      li {
+        margin: 1em 0;
+      }
+
+      pre {
+        padding:2em;
+
+        & > code {
+          font-family: Consolas, monospace;
+        }
+      }
     }
   }
 
