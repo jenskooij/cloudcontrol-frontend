@@ -1,0 +1,91 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.14.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:debug:20170905':
+    - nodemon > debug:
+        patched: '2020-02-21T09:33:23.329Z'
+    - cloud-control-frontend > nodemon > debug:
+        patched: '2020-02-21T09:33:23.329Z'
+    - nodemon > chokidar > fsevents > node-pre-gyp > tar-pack > debug:
+        patched: '2020-02-21T09:33:23.329Z'
+    - cloud-control-frontend > nodemon > chokidar > fsevents > node-pre-gyp > tar-pack > debug:
+        patched: '2020-02-21T09:33:23.329Z'
+  'npm:extend:20180424':
+    - cloud-control-frontend > node-sass > request > extend:
+        patched: '2020-02-21T09:33:23.329Z'
+    - cloud-control-frontend > node-sass > node-gyp > request > extend:
+        patched: '2020-02-21T09:33:23.329Z'
+    - nodemon > chokidar > fsevents > node-pre-gyp > request > extend:
+        patched: '2020-02-21T09:33:23.329Z'
+    - cloud-control-frontend > nodemon > chokidar > fsevents > node-pre-gyp > request > extend:
+        patched: '2020-02-21T09:33:23.329Z'
+  'npm:hoek:20180212':
+    - cloud-control-frontend > node-sass > request > hawk > hoek:
+        patched: '2020-02-21T09:33:23.329Z'
+    - cloud-control-frontend > node-sass > request > hawk > boom > hoek:
+        patched: '2020-02-21T09:33:23.329Z'
+    - cloud-control-frontend > node-sass > request > hawk > sntp > hoek:
+        patched: '2020-02-21T09:33:23.329Z'
+    - cloud-control-frontend > node-sass > node-gyp > request > hawk > hoek:
+        patched: '2020-02-21T09:33:23.329Z'
+    - nodemon > chokidar > fsevents > node-pre-gyp > hawk > hoek:
+        patched: '2020-02-21T09:33:23.329Z'
+    - cloud-control-frontend > node-sass > request > hawk > cryptiles > boom > hoek:
+        patched: '2020-02-21T09:33:23.329Z'
+    - cloud-control-frontend > node-sass > node-gyp > request > hawk > boom > hoek:
+        patched: '2020-02-21T09:33:23.329Z'
+    - nodemon > chokidar > fsevents > node-pre-gyp > hawk > boom > hoek:
+        patched: '2020-02-21T09:33:23.329Z'
+    - cloud-control-frontend > node-sass > node-gyp > request > hawk > sntp > hoek:
+        patched: '2020-02-21T09:33:23.329Z'
+    - nodemon > chokidar > fsevents > node-pre-gyp > hawk > sntp > hoek:
+        patched: '2020-02-21T09:33:23.329Z'
+    - nodemon > chokidar > fsevents > node-pre-gyp > request > hawk > hoek:
+        patched: '2020-02-21T09:33:23.329Z'
+    - cloud-control-frontend > nodemon > chokidar > fsevents > node-pre-gyp > hawk > hoek:
+        patched: '2020-02-21T09:33:23.329Z'
+    - cloud-control-frontend > node-sass > node-gyp > request > hawk > cryptiles > boom > hoek:
+        patched: '2020-02-21T09:33:23.329Z'
+    - nodemon > chokidar > fsevents > node-pre-gyp > hawk > cryptiles > boom > hoek:
+        patched: '2020-02-21T09:33:23.329Z'
+    - nodemon > chokidar > fsevents > node-pre-gyp > request > hawk > boom > hoek:
+        patched: '2020-02-21T09:33:23.329Z'
+    - cloud-control-frontend > nodemon > chokidar > fsevents > node-pre-gyp > hawk > boom > hoek:
+        patched: '2020-02-21T09:33:23.329Z'
+    - nodemon > chokidar > fsevents > node-pre-gyp > request > hawk > sntp > hoek:
+        patched: '2020-02-21T09:33:23.329Z'
+    - cloud-control-frontend > nodemon > chokidar > fsevents > node-pre-gyp > hawk > sntp > hoek:
+        patched: '2020-02-21T09:33:23.329Z'
+    - cloud-control-frontend > nodemon > chokidar > fsevents > node-pre-gyp > request > hawk > hoek:
+        patched: '2020-02-21T09:33:23.329Z'
+    - nodemon > chokidar > fsevents > node-pre-gyp > request > hawk > cryptiles > boom > hoek:
+        patched: '2020-02-21T09:33:23.329Z'
+    - cloud-control-frontend > nodemon > chokidar > fsevents > node-pre-gyp > hawk > cryptiles > boom > hoek:
+        patched: '2020-02-21T09:33:23.329Z'
+    - cloud-control-frontend > nodemon > chokidar > fsevents > node-pre-gyp > request > hawk > boom > hoek:
+        patched: '2020-02-21T09:33:23.329Z'
+    - cloud-control-frontend > nodemon > chokidar > fsevents > node-pre-gyp > request > hawk > sntp > hoek:
+        patched: '2020-02-21T09:33:23.329Z'
+    - cloud-control-frontend > nodemon > chokidar > fsevents > node-pre-gyp > request > hawk > cryptiles > boom > hoek:
+        patched: '2020-02-21T09:33:23.329Z'
+  'npm:stringstream:20180511':
+    - cloud-control-frontend > node-sass > request > stringstream:
+        patched: '2020-02-21T09:33:23.329Z'
+    - cloud-control-frontend > node-sass > node-gyp > request > stringstream:
+        patched: '2020-02-21T09:33:23.329Z'
+    - nodemon > chokidar > fsevents > node-pre-gyp > request > stringstream:
+        patched: '2020-02-21T09:33:23.329Z'
+    - cloud-control-frontend > nodemon > chokidar > fsevents > node-pre-gyp > request > stringstream:
+        patched: '2020-02-21T09:33:23.329Z'
+  'npm:tough-cookie:20170905':
+    - nodemon > chokidar > fsevents > node-pre-gyp > request > tough-cookie:
+        patched: '2020-02-21T09:33:23.329Z'
+    - cloud-control-frontend > nodemon > chokidar > fsevents > node-pre-gyp > request > tough-cookie:
+        patched: '2020-02-21T09:33:23.329Z'
+  'npm:tunnel-agent:20170305':
+    - cloud-control-frontend > node-sass > request > tunnel-agent:
+        patched: '2020-02-21T09:33:23.329Z'
+    - cloud-control-frontend > node-sass > node-gyp > request > tunnel-agent:
+        patched: '2020-02-21T09:33:23.329Z'
